@@ -19,7 +19,7 @@ import pytest
 #     page.not_product_in_basket()
 #     page.text_basket_is_empty()
 
-@pytest.mark.login_guest
+# @pytest.mark.login_guest
 class TestLoginFromMainPage():
     # не забываем передать первым аргументом self                       
     def test_guest_can_go_to_login_page(self, browser):     
