@@ -19,5 +19,15 @@ class ProductPage(BasePage):
         product_price = self.browser.find_element(*ProductPageLocators.PRICE_PRODUCT).text
         busket_price = self.browser.find_element(*ProductPageLocators.BUSKET_PRICE).text
         assert product_price == busket_price, "Prices are not equal!"
+    
+    def guest_cant_see_success_message_after_adding_product_to_basket(self):
+        assert self.is_not_element_present(*ProductPageLocators.ALLERT_SUCCESS), "Message success is presented after adding basket!"
         
+    def guest_cant_see_success_message_on_page(self):
+        assert self.is_not_element_present(*ProductPageLocators.ALLERT_SUCCESS), "Message success is presented on page!"
         
+    def message_disappeared_after_adding_product_to_basket(self):
+        assert self.is_disappeared(*ProductPageLocators.ALLERT_SUCCESS), "Message is not dissappeared after add basket!"
+        
+    
+
