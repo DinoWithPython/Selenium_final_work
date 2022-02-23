@@ -18,4 +18,7 @@ class MainPage(BasePage):
     
     def text_basket_is_empty(self):
         assert self.is_element_present(*MainPageLocators.BASKET_IS_EMPTY), "No text that the basket is empty"
-        
+
+
+    def test_guest_should_see_login_link(self, browser):
+        assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
